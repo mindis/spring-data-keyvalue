@@ -73,6 +73,12 @@ public interface KeyValueAdapter extends DisposableBean {
 	Collection<?> getAllOf(Serializable keyspace);
 
 	/**
+	 * @param keyspace
+	 * @return
+	 */
+	KeyValueIterator<? extends Serializable, ?> scan(Serializable keyspace);
+
+	/**
 	 * Remove all objects of given type.
 	 * 
 	 * @param keyspace must not be {@literal null}.
