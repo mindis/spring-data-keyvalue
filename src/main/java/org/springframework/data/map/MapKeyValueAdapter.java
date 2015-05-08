@@ -104,6 +104,15 @@ public class MapKeyValueAdapter extends AbstractKeyValueAdapter {
 
 	/*
 	 * (non-Javadoc)
+	 * @see org.springframework.data.keyvalue.core.KeyValueAdapter#contains(java.io.Serializable, java.io.Serializable)
+	 */
+	@Override
+	public long count(Serializable keyspace) {
+		return getKeySpaceMap(keyspace).size();
+	}
+
+	/*
+	 * (non-Javadoc)
 	 * @see org.springframework.data.keyvalue.core.KeyValueAdapter#get(java.io.Serializable, java.io.Serializable)
 	 */
 	@Override
